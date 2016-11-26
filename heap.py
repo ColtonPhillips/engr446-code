@@ -46,13 +46,12 @@ def left(i):
 	return 2*i + 1
 def right(i):
 	return 2*i + 2
-start = time()
 a=[]
 for i in range(int(sys.argv[1])):
 	a.append(i)
 
 random.shuffle(a)
+start = time()
 heapsort(a,int(sys.argv[1]))
-print a
 end = time()
 print ("this took " + str(end - start))

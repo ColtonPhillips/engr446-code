@@ -67,17 +67,17 @@ void shuffle_heap(std::vector<int> &s) {
 }
 
 int main (int argc, char ** argv){
-	double start = omp_get_wtime();
 	std::vector<int> heap;
 	unsigned int c = atoi(argv[1]);
 	for (unsigned int i = 0; i < c; i++) {
 		heap.push_back(i);
 	}
 	shuffle_heap(heap);
+	double start = omp_get_wtime();
 	heapsort(heap,c);
-	for (auto a: heap) {
-		std::cout << a << "\n"; //<< std::endl;
-	}
+	//for (auto a: heap) {
+//		std::cout << a << "\n"; //<< std::endl;
+//	}
 	double end = omp_get_wtime();
 	double diff = end-start;
 	std::cout << "This took " << diff << " seconds to execute!";
